@@ -14,35 +14,40 @@
         android:layout_height="match_parent"
         tools:context=".exofragments.ExoPlayerFragment">
 
-        <TextView
-            android:id="@+id/textView"
+        <LinearLayout
             android:layout_width="0dp"
             android:layout_height="0dp"
             android:gravity="center"
-            android:text="@string/hello_blank_fragment"
-            android:textColor="#1B0059"
-            android:textSize="18sp"
-            app:layout_constraintBottom_toTopOf="@+id/guideline"
+            android:orientation="vertical"
+            android:padding="10dp"
+            app:layout_constraintBottom_toTopOf="@+id/linearLayout2"
             app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.5">
 
-        <com.google.android.exoplayer2.ui.PlayerView
-            android:id="@+id/exo_player_view"
-            android:layout_width="0dp"
-            android:layout_height="0dp"
-            app:layout_constraintBottom_toTopOf="@+id/guideline2"
-            app:controller_layout_id="@layout/exo_custom_controller"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="@+id/guideline" />
+            <TextView
+                android:id="@+id/textView"
+                android:layout_width="match_parent"
+                android:layout_height="36dp"
+                android:layout_gravity="center"
+                android:layout_marginVertical="10dp"
+                android:layout_weight="0.1"
+                android:gravity="center"
+                android:text="@string/hello_blank_fragment"
+                android:textColor="#1B0059"
+                android:textSize="18sp" />
 
-        <androidx.constraintlayout.widget.Guideline
-            android:id="@+id/guideline"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            app:layout_constraintGuide_begin="86dp" />
+            <com.google.android.exoplayer2.ui.PlayerView
+                android:id="@+id/exo_player_view"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_gravity="center"
+                android:layout_weight="1"
+                android:layout_marginVertical="10dp"
+                app:controller_layout_id="@layout/exo_custom_controller" />
+        </LinearLayout>
 
         <androidx.constraintlayout.widget.Guideline
             android:id="@+id/guideline2"
@@ -52,14 +57,18 @@
             app:layout_constraintGuide_begin="456dp" />
 
         <LinearLayout
+            android:id="@+id/linearLayout2"
             android:layout_width="0dp"
             android:layout_height="0dp"
-            android:orientation="vertical"
+            android:baselineAligned="false"
             android:gravity="center"
+            android:orientation="vertical"
             app:layout_constraintBottom_toTopOf="@+id/guideline3"
-            app:layout_constraintEnd_toStartOf="@+id/guideline5"
-            app:layout_constraintStart_toStartOf="@+id/guideline4"
-            app:layout_constraintTop_toTopOf="@+id/guideline2">
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/guideline2"
+            app:layout_constraintVertical_bias="1.0">
 
             <androidx.appcompat.widget.AppCompatButton
                 android:id="@+id/button"
@@ -67,11 +76,11 @@
                 android:layout_height="65dp"
                 android:layout_gravity="center"
                 android:background="@drawable/exo_player_shape"
-                android:padding="5dp"
-                android:textSize="15sp"
                 android:onClick="@{()-> exoPlayerFragment.goBack()}"
+                android:padding="5dp"
                 android:text="@string/go_back_txt"
-                android:textColor="@color/white" />
+                android:textColor="@color/white"
+                android:textSize="15sp" />
         </LinearLayout>
 
         <androidx.constraintlayout.widget.Guideline
@@ -81,43 +90,16 @@
             android:orientation="horizontal"
             app:layout_constraintGuide_begin="544dp" />
 
-        <androidx.constraintlayout.widget.Guideline
-            android:id="@+id/guideline4"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:orientation="vertical"
-            app:layout_constraintGuide_begin="68dp" />
-
-        <androidx.constraintlayout.widget.Guideline
-            android:id="@+id/guideline5"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:orientation="vertical"
-            app:layout_constraintGuide_begin="368dp" />
-
-        <androidx.constraintlayout.widget.Guideline
-            android:id="@+id/guideline10"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            app:layout_constraintGuide_begin="53dp" />
-
-        <androidx.constraintlayout.widget.Guideline
-            android:id="@+id/guideline11"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            app:layout_constraintGuide_begin="635dp" />
-
         <ProgressBar
             android:id="@+id/progressBar"
             style="?android:attr/progressBarStyle"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toStartOf="@+id/guideline5"
-            app:layout_constraintStart_toStartOf="@+id/guideline4"
-            app:layout_constraintTop_toTopOf="parent" />
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.5" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>
