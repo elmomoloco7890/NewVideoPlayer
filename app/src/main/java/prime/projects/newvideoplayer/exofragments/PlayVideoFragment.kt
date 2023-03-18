@@ -37,7 +37,8 @@ class PlayVideoFragment : Fragment() {
         }
     }
 
-    private fun createMessage(){}
+
+    //private fun createMessage(){}
 
     fun launchToVideo(){
         findNavController().navigate(R.id.action_playVideoFragment_to_exoPlayerFragment)
